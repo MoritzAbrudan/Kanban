@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban add Task</title>
+
+
+    <script src="./mini_backend.js"></script>
+    <script src="./script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./addTask.css">
+
+</head>
+
+<body>
+    <div class="page">
+        <h2>Add Task</h2>
+        <span>Learning Management System Project</span>
+
+        <!-- Container for Add Task -->
+        <div class="outerContainer">
+            <!-- Form -->
+            <form action="">
+                <!-- Title -->
+                <div class="content">
+                    <b class="headline">TITLE</b>
+                    <input type="text" class="input" name="title" id="title">
+                </div>
+                <!-- Category -->
+                <div class="content">
+                    <b class="headline">CATEGORY</b>
+                    <input list="category" class="input">
+                    <datalist id="category">
+                        <option value="Management"></option>
+                        <option value="Marketing"></option>
+                        <option value="Retail"></option>
+                        <option value="Accounting"></option>
+                    </datalist>
+                </div>
+                <!-- Description -->
+                <div class="content">
+                    <b class="headline">DESCRIPTION</b>
+                    <textarea name="Description" id="description" cols="30" rows="5" class="text"></textarea>
+                </div>
+                <!-- due date -->
+                <div class="content">
+                    <b class="headline">DUE DATE</b>
+                    <input type="date" name="Date" id="date" class="input">
+                </div>
+                <!-- Urgency -->
+                <div class="content">
+                    <b class="headline">URGENCY</b>
+                    <input list="urgency" class="input">
+                    <datalist id="urgency">
+                        <option value="Very High"></option>
+                        <option value="High"></option>
+                        <option value="Normal"></option>
+                        <option value="Got Time"></option>
+                    </datalist>
+                </div>
+                <!-- Assigned to -->
+                <div class="content">
+                    <b class="headline">ASSIGNED</b>
+                </div>
+                <div class="content buttonBox">
+                    <button class="btnCancle"><b>Cancle</b></button>
+                    <button class="btnCreate"><b></b>Create Task</b></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

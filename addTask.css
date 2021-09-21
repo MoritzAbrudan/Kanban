@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.page {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.outerContainer {
+    background-color: rgba(93, 123, 255, 0.1);
+    border-radius: 20px;
+    width: 900px;
+    height: 400px;
+    margin-top: 30px;
+    column-count: 2;
+}
+
+.headline {
+    margin-bottom: 12px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    height: 100%;
+}
+
+.input {
+    font-size: 18px;
+    padding: 6px;
+}
+
+.buttonBox {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.text {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.btnCancle {
+    border: none;
+    margin-right: 40px;
+    width: 100px;
+    height: 45px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.btnCreate {
+    border: none;
+    background-color: blue;
+    width: 100px;
+    height: 45px;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: 'PT Sans', sans-serif;
+}

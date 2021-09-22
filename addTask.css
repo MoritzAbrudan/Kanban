@@ -47,6 +47,14 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
+.left {
+    align-items: flex-start;
+}
+
+.addPosition {
+    object-fit: contain;
+}
+
 .btnCancle {
     border: none;
     margin-right: 40px;

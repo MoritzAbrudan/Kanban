@@ -10,6 +10,7 @@
 
     <script src="./mini_backend.js"></script>
     <script src="./script.js"></script>
+    <script src="./addTask.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@
         <!-- Container for Add Task -->
         <div class="outerContainer">
             <!-- Form -->
-            <form action="">
+            <form id="createTask">
                 <!-- Title -->
                 <div class="content">
                     <b class="headline">TITLE</b>
@@ -65,12 +66,13 @@
                     </datalist>
                 </div>
                 <!-- Assigned to -->
-                <div class="content">
+                <div class="content left">
                     <b class="headline">ASSIGNED</b>
+                    <img class="addPosition" src="./img/icon plus.png">
                 </div>
                 <div class="content buttonBox">
-                    <button class="btnCancle"><b>Cancle</b></button>
-                    <button class="btnCreate"><b></b>Create Task</b></button>
+                    <button class="btnCancle" onclick="clearAll()"><b>Cancle</b></button>
+                    <button class="btnCreate" onclick="createTask()"><b></b>Create Task</b></button>
                 </div>
             </form>
         </div>

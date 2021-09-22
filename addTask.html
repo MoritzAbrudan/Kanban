@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body onload="init()">
     <div class="page">
         <h2>Add Task</h2>
         <span>Learning Management System Project</span>
@@ -38,10 +38,6 @@
                     <b class="headline">CATEGORY</b>
                     <input list="category" class="input">
                     <datalist id="category">
-                        <option value="Management"></option>
-                        <option value="Marketing"></option>
-                        <option value="Retail"></option>
-                        <option value="Accounting"></option>
                     </datalist>
                 </div>
                 <!-- Description -->
@@ -59,10 +55,6 @@
                     <b class="headline">URGENCY</b>
                     <input list="urgency" class="input">
                     <datalist id="urgency">
-                        <option value="Very High"></option>
-                        <option value="High"></option>
-                        <option value="Normal"></option>
-                        <option value="Got Time"></option>
                     </datalist>
                 </div>
                 <!-- Assigned to -->
@@ -72,7 +64,7 @@
                 </div>
                 <div class="content buttonBox">
                     <button class="btnCancle" onclick="clearAll()"><b>Cancle</b></button>
-                    <button class="btnCreate" onclick="createTask()"><b></b>Create Task</b></button>
+                    <button class="btnCreate" onclick="createTask()"><b>Create Task</b></button>
                 </div>
             </form>
         </div>

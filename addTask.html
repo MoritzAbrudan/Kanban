@@ -27,7 +27,7 @@
         <!-- Container for Add Task -->
         <div class="outerContainer">
             <!-- Form -->
-            <form id="addTask">
+            <form id="addTask" onsubmit="createTask(event)">
                 <!-- Title -->
                 <div class="content">
                     <b class="headline">TITLE</b>
@@ -63,8 +63,8 @@
                     <img class="addPosition" src="./img/icon plus.png">
                 </div>
                 <div class="content buttonBox">
-                    <button class="btnCancle" onclick="clearAll()"><b>Cancle</b></button>
-                    <button class="btnCreate" onclick="createTask()"><b>Create Task</b></button>
+                    <button class="btnCancle" type="reset"><b>Cancle</b></button>
+                    <button class="btnCreate" type="submit"><b>Create Task</b></button>
                 </div>
             </form>
         </div>

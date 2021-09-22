@@ -1,11 +1,4 @@
-let allTasks = [{
-    "title": "Kanban Board erstellen",
-    "category": "Management",
-    "description": "Gruppenarbeit bei der Developerakademie",
-    "date": "08.10.2021",
-    "urgency": "normal",
-    "assignedTo": "alle",
-}, ];
+let allTasks = [];
 
 let category = ['Management', 'Marketing', 'Retail', 'Accounting'];
 let urgency = ['Very High', 'High', 'Normal', 'Got Time'];
@@ -15,7 +8,7 @@ let urgency = ['Very High', 'High', 'Normal', 'Got Time'];
  * Collection of functions wich are initiated onload
  */
 function init() {
-    defineUrgency();
+    defineCategory();
     defineUrgency();
 }
 
@@ -49,23 +42,17 @@ function defineUrgency() {
 
 /**
  * 
- * Clears all input field of the form
+ * saves new task in array onsubmit
  */
-function clearAll() {
-    document.getElementById('addTask').reset();
-}
-
-/**
- * 
- * saves new task in array
- */
-function createTask() {
+function createTask(event) {
     allTasks.push({
         title: document.getElementById('title').value,
-        //category: document.getElementById('category').value,
-        //description: document.getElementById('description').value,
-        //date: document.getElementById('date').value,
-        //urgency: document.getElementById('urgency').value,
+        category: document.getElementById('category').value,
+        description: document.getElementById('description').value,
+        date: document.getElementById('date').value,
+        urgency: document.getElementById('urgency').value,
         //assignedTo: document.getElementById('assignedTo').value,
     }, );
+    event.preventDefault();
+    document.getElementById('addTask').reset();
 }

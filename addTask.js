@@ -7,9 +7,11 @@ let urgency = ['Very High', 'High', 'Normal', 'Got Time'];
  * 
  * Collection of functions wich are initiated onload
  */
-function init() {
+async function init() {
     defineCategory();
     defineUrgency();
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem("allTasks")) || [];
 }
 
 /**
@@ -54,5 +56,6 @@ function createTask(event) {
         //assignedTo: document.getElementById('assignedTo').value,
     }, );
     event.preventDefault();
+    backend.setItem('allTasks', JSON.stringify(allTasks));
     document.getElementById('addTask').reset();
 }

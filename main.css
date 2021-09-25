@@ -44,3 +44,15 @@ body {
 .headline {
     margin-bottom: 12px;
 }
+
+
+/* Login Seite */
+
+button {
+    background-color: #1f1fa0;
+    color: white;
+}
+
+.login {
+    margin-bottom: 20px;
+}

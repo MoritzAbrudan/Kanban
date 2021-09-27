@@ -16,10 +16,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./addTask.css">
+    <link rel="stylesheet" href="./navi.css">
 
 </head>
 
-<body onload="init()">
+<body onload="init(), includeHTML()">
+    <div class="nav-section">
+        <div w3-include-html="navi.html"></div>
+    </div>
     <div class="page">
         <h2>Add Task</h2>
         <span>Learning Management System Project</span>
@@ -38,7 +42,7 @@
                     <b class="headline">CATEGORY</b>
                     <input list="category" class="input">
                     <datalist id="category">
-                    </datalist>
+                        </datalist>
                 </div>
                 <!-- Description -->
                 <div class="content">
@@ -55,7 +59,7 @@
                     <b class="headline">URGENCY</b>
                     <input list="urgency" class="input">
                     <datalist id="urgency">
-                    </datalist>
+                        </datalist>
                 </div>
                 <!-- Assigned to -->
                 <div class="content left">
@@ -69,7 +73,6 @@
             </form>
         </div>
     </div>
-
 </body>
 
 </html>

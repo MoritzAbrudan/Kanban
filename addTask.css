@@ -1,15 +1,7 @@
-body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'PT Sans', sans-serif;
-}
-
 .page {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    margin-left: 20px;
 }
 
 .outerContainer {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Join Backlog</title>
+
+    
+    <script src="mini_backend.js"></script>
+    <script src="script.js"></script>
+    <script src="backlog.js"></script>
+
+    
+    <link rel="stylesheet" href="backlog.css">
+    <link rel="stylesheet" href="navi.css">
+</head>
+<body>
+
+    <header w3-include-html="navbar.html"></header>
+            
+    <div class="backlog-container">
+
+        <div class="backlog-head">
+                <h2>Backlog</h2>
+                <p>Learning Management System Project</p> 
+        </div>
+        
+        <div class="backlog-table-container d-flex-center">
+                
+            <table id="table" class="table">
+                <tr class="table-head">
+                    <th>Assigned To</th>
+                    <th>Category</th>
+                    <th>Details</th>
+                </tr>
+                <tr class="table-todo-row">
+
+                    <td id="table-profile" class="orange">
+                        <div class="table-profile-container">
+                            <img id="profile-img" src="img/face-women1.jpg">
+                            <div class="table-profile-name-email">
+                                <div id="profile-name">Test Name</div>
+                            <a href="mailto: info@harttung-fotografie.de" id="profile-email" class="profile-email">info@test.de</a>    
+                            </div>
+                        </div>                                                      
+                    </td>
+                        <td id="table-category">Marketing</td>
+                        <td id="table-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, tempora laborum magni in.</td>
+                </tr>
+                    
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

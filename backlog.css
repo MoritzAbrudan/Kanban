@@ -1,0 +1,95 @@
+.section-backlog{    
+    align-items: flex-start;
+}
+
+.backlog-container{
+    width: 95%;
+    margin: 20px 0px;
+}
+
+
+.backlog-head{
+    font-size: 25px;
+    text-align: left; 
+    padding: 7px;   
+}
+.backlog-head h2{
+    margin: 5px 0px;
+}
+
+.backlog-head p{
+    color: var(--font-main-color);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+
+/* Table */
+.table{
+    width: 100%;   
+    border-collapse: separate;    
+    border-spacing:0 10px;  
+              
+}
+.table-head{
+    color: darkblue;
+    font-size: 20px;
+    text-align: left;    
+}
+.table-head th{
+    padding: 5px;
+}
+.table-todo-row{
+    background-color: rgb(235, 237, 252);
+    font-size: 20px;                    
+}
+.table-todo-row td{
+    padding: 10px;    
+}
+
+/* Profile td */
+#table-profile{
+    min-width: 300px;    
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;        
+    white-space:nowrap;    
+}
+#table-profile.green{
+    border-left: 4px solid green;
+}
+#table-profile.orange{
+    border-left: 4px solid orange;
+}
+#table-profile.red{
+    border-left: 4px solid red;
+}
+#table-profile.blue{
+    border-left: 4px solid blue;
+}
+
+
+.table-profile-container{
+    display: flex;
+    align-items: center;
+}
+#table-profile img{
+    display: inline;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    padding: 3px;
+    margin-right: 10px;
+}
+.profile-email{
+    color: lightblue;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+
+#table-details{
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}

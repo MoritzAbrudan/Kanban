@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Board</title>
+
+    <script src="mini_backend.js"></script>
+    <script src="script.js"></script>
+    <script src="board.js"></script>
+
+    
+    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="navi.css">
+</head>
+<body onload="updateBoard()">
+
+    <div class="nav-section">
+        <div w3-include-html="navi.html"></div>
+    </div>
+
+    <div class = "mainContainer">
+
+        <div class = "singleTaskContainer">
+            <div class = "taskName">
+                <p>TO DO</p>
+            </div>
+            <div class ="task" id="todo">
+            </div>
+        </div>
+        <div class = "singleTaskContainer">
+            <div class = "taskName">
+                <p>IN PROGRESS</p>
+            </div>
+            <div class ="task" id ="inProgress">                
+            </div>
+        </div>
+        <div class = "singleTaskContainer">
+            <div class = "taskName">
+                <p>TESTING</p>
+            </div>
+            <div class ="task" id="testing">                
+            </div>
+        </div>
+        <div class = "singleTaskContainer">
+            <div class = "taskName">
+                <p>DONE</p>
+            </div>
+            <div class ="task" id ="done">                
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

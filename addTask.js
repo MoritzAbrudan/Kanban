@@ -1,7 +1,20 @@
 let allTasks = [];
 
-let category = ['Management', 'Marketing', 'Retail', 'Accounting'];
-let urgency = ['Very High', 'High', 'Normal', 'Got Time'];
+let category = ['Management', 'Marketing', 'Vertrieb', 'Buchhaltung'];
+let urgency = ['Sehr Hoch', 'Hoch', 'Normal', 'Hat Zeit'];
+let assignedTo = [{
+        'name': 'Moritz',
+        'email': 'moritz@info.de'
+    },
+    {
+        'name': 'Destay',
+        'email': 'destay@info.de',
+    },
+    {
+        'name': 'Rohit',
+        'email': 'rohit@info.de',
+    },
+];
 
 /**
  * 

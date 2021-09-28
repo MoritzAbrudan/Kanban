@@ -34,36 +34,36 @@
             <form id="addTask" onsubmit="createTask(event)">
                 <!-- Title -->
                 <div class="content">
-                    <b class="headline">TITLE</b>
-                    <input type="text" class="input" name="title" id="title">
+                    <b class="headline">TITEL</b>
+                    <input type="text" class="input" name="title" id="title" required>
                 </div>
                 <!-- Category -->
                 <div class="content">
-                    <b class="headline">CATEGORY</b>
+                    <b class="headline">KATEGORIE</b>
                     <input list="category" class="input">
                     <datalist id="category">
                         </datalist>
                 </div>
                 <!-- Description -->
                 <div class="content">
-                    <b class="headline">DESCRIPTION</b>
+                    <b class="headline">BESCHREIBUNG</b>
                     <textarea name="Description" id="description" cols="30" rows="5" class="text"></textarea>
                 </div>
                 <!-- due date -->
                 <div class="content">
-                    <b class="headline">DUE DATE</b>
+                    <b class="headline">BIS ZU</b>
                     <input type="date" name="Date" id="date" class="input">
                 </div>
                 <!-- Urgency -->
                 <div class="content">
-                    <b class="headline">URGENCY</b>
-                    <input list="urgency" class="input">
+                    <b class="headline">DRINGLICHKEIT</b>
+                    <input list="urgency" class="input" required>
                     <datalist id="urgency">
                         </datalist>
                 </div>
                 <!-- Assigned to -->
                 <div class="content left">
-                    <b class="headline">ASSIGNED</b>
+                    <b class="headline">ZUTEILEN AN</b>
                     <img class="addPosition" src="./img/icon plus.png">
                 </div>
                 <div class="content buttonBox">

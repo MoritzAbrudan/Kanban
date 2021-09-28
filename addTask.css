@@ -53,6 +53,7 @@
     width: 100px;
     height: 45px;
     font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
 }
 
 .btnCreate {
@@ -64,4 +65,5 @@
     border-radius: 8px;
     padding: 8px;
     font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
 }

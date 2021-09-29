@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="backlog.css">
     <link rel="stylesheet" href="navi.css">
 </head>
-<body>
+<body onload="includeHTML(), loadBacklog()">
 
-    <header w3-include-html="navbar.html"></header>
+    <div class="nav-section">
+        <div w3-include-html="navi.html"></div>
+    </div>
             
     <div class="backlog-container">
 
@@ -35,20 +37,7 @@
                     <th>Category</th>
                     <th>Details</th>
                 </tr>
-                <tr class="table-todo-row">
-
-                    <td id="table-profile" class="orange">
-                        <div class="table-profile-container">
-                            <img id="profile-img" src="img/face-women1.jpg">
-                            <div class="table-profile-name-email">
-                                <div id="profile-name">Test Name</div>
-                            <a href="mailto: info@harttung-fotografie.de" id="profile-email" class="profile-email">info@test.de</a>    
-                            </div>
-                        </div>                                                      
-                    </td>
-                        <td id="table-category">Marketing</td>
-                        <td id="table-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, tempora laborum magni in.</td>
-                </tr>
+                
                     
             </table>
         </div>

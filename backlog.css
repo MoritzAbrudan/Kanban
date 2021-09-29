@@ -3,6 +3,7 @@
 }
 
 .backlog-container{
+    padding: 24px;
     width: 95%;
     margin: 20px 0px;
 }
@@ -83,7 +84,7 @@
     margin-right: 10px;
 }
 .profile-email{
-    color: lightblue;
+    color: rgb(73, 139, 245);
     text-decoration: none;
     word-wrap: break-word;
 }

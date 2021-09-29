@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="board.css">
     <link rel="stylesheet" href="navi.css">
 </head>
-<body onload="includeHTML()">
+<body onload="includeHTML(), updateBoard()">
 
     <div class="nav-section">
         <div w3-include-html="navi.html"></div>
@@ -27,7 +27,7 @@
             <div class = "taskName">
                 <p>TO DO</p>
             </div>
-            <div class ="task" id="todo">
+            <div class ="task" id="toDo">
             </div>
         </div>
         <div class = "singleTaskContainer">

@@ -1,12 +1,11 @@
 let url = 'http://gruppe-105.developerakademie.net/smallest_backend_ever';
-let allTasks = [];
 
 async function loadBacklog(){
     await loadFromBackend();
-    createProfile();
+    generateProfile();
 }
 
-function createProfile(){
+function generateProfile(){
     let container = document.getElementById('table');
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
@@ -50,5 +49,4 @@ function chooseColor(i){
 async function loadFromBackend() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-    loggedInUser = JSON.parse(backend.getItem('loggedInUser')) || {};
 }

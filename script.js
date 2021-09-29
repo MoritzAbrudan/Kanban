@@ -27,4 +27,15 @@ function includeHTML() {
             return;
         }
     }
+    // Navi Animation
+
+    let url = window.location.href;
+
+    if (url.endsWith('board.html')) {
+        document.getElementById('board').classList.add('nav-animation');
+    }
+
+    if (url.endsWith('backlog.html')) {
+        document.getElementById('backlog').classList.add('nav-animation');
+    }
 }

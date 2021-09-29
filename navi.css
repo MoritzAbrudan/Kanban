@@ -54,16 +54,9 @@ body {
     border-left: white solid 6px;
 }
 
-.nav-menue a:active {
-    color: rgb(255, 0, 140);
-}
-
-.nav-menue a:visited,
-.nav-menue a:link,
-.nav-menue a:focus,
-.nav-menue a:hover,
-.nav-menue a:active {
-    color: white;
+.nav-animation {
+    color: brown;
+    text-decoration: underline;
 }
 
 .footer-section {

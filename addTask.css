@@ -4,6 +4,10 @@ form {
     height: 400px;
 }
 
+.d-none {
+    display: none;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -55,6 +59,7 @@ form {
 
 .addPosition {
     object-fit: contain;
+    cursor: pointer;
 }
 
 .btnCancle {
@@ -76,4 +81,61 @@ form {
     padding: 8px;
     font-family: 'PT Sans', sans-serif;
     cursor: pointer;
+}
+
+.containerWindow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.window {
+    position: absolute;
+    top: calc(50% - 150px);
+    right: calc(50% - 150px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerUser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.containerUser:hover {
+    filter: brightness(1.1);
+}
+
+.userImage {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.userImage img {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    border: white solid 2px;
+    border-radius: 50px;
+}
+
+.userInfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.selected {
+    background-color: rgba(0, 0, 0, 0.5);
 }

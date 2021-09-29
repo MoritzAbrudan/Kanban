@@ -26,7 +26,6 @@
     <div class="page">
         <h2>Add Task</h2>
         <span>Learning Management System Project</span>
-
         <!-- Container for Add Task -->
         <div class="outerContainer">
             <!-- Form -->
@@ -66,7 +65,7 @@
                     <!-- Assigned to -->
                     <div class="content left">
                         <b class="headline">ZUTEILEN AN</b>
-                        <img class="addPosition" src="./img/icon plus.png">
+                        <img class="addPosition" src="./img/icon plus.png" onclick="showPosition()">
                     </div>
                     <div class="content buttonBox">
                         <button class="btnCancle" type="reset"><b>Cancle</b></button>
@@ -74,6 +73,12 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Window for selecting Positions -->
+    <div class="containerWindow d-none" id="containerWindow" onclick="hidePosition()">
+        <div class="window" id="window" onclick="event.stopPropagation()">
         </div>
     </div>
 </body>

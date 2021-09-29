@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./addTask.css">
     <link rel="stylesheet" href="./navi.css">
-
 </head>
 
 <body onload="init(), includeHTML()">
@@ -32,43 +31,47 @@
         <div class="outerContainer">
             <!-- Form -->
             <form id="addTask" onsubmit="createTask(event)">
-                <!-- Title -->
-                <div class="content">
-                    <b class="headline">TITEL</b>
-                    <input type="text" class="input" name="title" id="title" required>
-                </div>
-                <!-- Category -->
-                <div class="content">
-                    <b class="headline">KATEGORIE</b>
-                    <input list="category" class="input">
-                    <datalist id="category">
+                <div class="column">
+                    <!-- Title -->
+                    <div class="content">
+                        <b class="headline">TITEL</b>
+                        <input type="text" class="input" name="title" id="title" required>
+                    </div>
+                    <!-- Category -->
+                    <div class="content">
+                        <b class="headline">KATEGORIE</b>
+                        <input list="category" id="input-cat" class="input">
+                        <datalist id="category">
                         </datalist>
+                    </div>
+                    <!-- Description -->
+                    <div class="content">
+                        <b class="headline">BESCHREIBUNG</b>
+                        <textarea name="Description" id="description" cols="30" rows="8" class="text"></textarea>
+                    </div>
                 </div>
-                <!-- Description -->
-                <div class="content">
-                    <b class="headline">BESCHREIBUNG</b>
-                    <textarea name="Description" id="description" cols="30" rows="5" class="text"></textarea>
-                </div>
-                <!-- due date -->
-                <div class="content">
-                    <b class="headline">BIS ZU</b>
-                    <input type="date" name="Date" id="date" class="input">
-                </div>
-                <!-- Urgency -->
-                <div class="content">
-                    <b class="headline">DRINGLICHKEIT</b>
-                    <input list="urgency" class="input" required>
-                    <datalist id="urgency">
+                <div class="column">
+                    <!-- due date -->
+                    <div class="content">
+                        <b class="headline">BIS ZU</b>
+                        <input type="date" name="Date" id="date" class="input">
+                    </div>
+                    <!-- Urgency -->
+                    <div class="content">
+                        <b class="headline">DRINGLICHKEIT</b>
+                        <input list="urgency" id="input-urge" class="input" required>
+                        <datalist id="urgency">
                         </datalist>
-                </div>
-                <!-- Assigned to -->
-                <div class="content left">
-                    <b class="headline">ZUTEILEN AN</b>
-                    <img class="addPosition" src="./img/icon plus.png">
-                </div>
-                <div class="content buttonBox">
-                    <button class="btnCancle" type="reset"><b>Cancle</b></button>
-                    <button class="btnCreate" type="submit"><b>Create Task</b></button>
+                    </div>
+                    <!-- Assigned to -->
+                    <div class="content left">
+                        <b class="headline">ZUTEILEN AN</b>
+                        <img class="addPosition" src="./img/icon plus.png">
+                    </div>
+                    <div class="content buttonBox">
+                        <button class="btnCancle" type="reset"><b>Cancle</b></button>
+                        <button class="btnCreate" type="submit"><b>Create Task</b></button>
+                    </div>
                 </div>
             </form>
         </div>

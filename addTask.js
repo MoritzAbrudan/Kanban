@@ -27,6 +27,11 @@ async function init() {
     allTasks = JSON.parse(backend.getItem("allTasks")) || [];
 }
 
+function today() {
+    let today = new Date();
+    document.getElementById('date').setAttribute('min', today);
+}
+
 /**
  * 
  * Function for dropdown menu Category
@@ -36,7 +41,7 @@ function defineCategory() {
     for (let i = 0; i < category.length; i++) {
         const cat = category[i];
         document.getElementById('category').innerHTML += `
-        <option value="${cat}"></option>
+        <option value="${cat}">
         `;
     };
 }
@@ -50,7 +55,7 @@ function defineUrgency() {
     for (let i = 0; i < urgency.length; i++) {
         const urge = urgency[i];
         document.getElementById('urgency').innerHTML += `
-        <option value="${urge}"></option>
+        <option value="${urge}">
         `;
     };
 }
@@ -62,10 +67,10 @@ function defineUrgency() {
 function createTask(event) {
     allTasks.push({
         title: document.getElementById('title').value,
-        category: document.getElementById('category').value,
+        category: document.getElementById('input-cat').value,
         description: document.getElementById('description').value,
         date: document.getElementById('date').value,
-        urgency: document.getElementById('urgency').value,
+        urgency: document.getElementById('input-urge').value,
         //assignedTo: document.getElementById('assignedTo').value,
     }, );
     event.preventDefault();

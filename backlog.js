@@ -10,11 +10,13 @@ function generateProfile(){
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
         let color = chooseColor(i);
-        container.innerHTML += profileAsHTML(color, allTasks, i);
+        for (let j = 0; j < allTasks[i]['assignedTo'].length; j++) {                
+            container.innerHTML += profileAsHTML(color, allTasks, i, j);
+        }   
     }
 }
 
-function profileAsHTML(color, allTasks, i){
+function profileAsHTML(color, allTasks, i, j){
     return`
     <tr class="table-todo-row">
 
@@ -22,8 +24,8 @@ function profileAsHTML(color, allTasks, i){
                         <div class="table-profile-container">
                             <img id="profile-img" src="img/face-women1.jpg">
                             <div class="table-profile-name-email">
-                                <div id="profile-name">${allTasks[i]['name']}</div>
-                            <a href="" id="profile-email" class="profile-email">${allTasks[i]['email']}</a>    
+                                <div id="profile-name">${allTasks[i]['assignedTo'][j]['name']}</div>
+                            <a href="" id="profile-email" class="profile-email">${allTasks[i]['assignedTo'][j]['email']}</a>    
                             </div>
                         </div>                                                      
                     </td>

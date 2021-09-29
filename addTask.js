@@ -75,6 +75,7 @@ function createTask(event) {
         description: document.getElementById('description').value,
         date: document.getElementById('date').value,
         urgency: document.getElementById('input-urge').value,
+        status: `toDo`,
         assignedTo: selectetPositions,
     }, );
     event.preventDefault();

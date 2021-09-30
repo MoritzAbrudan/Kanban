@@ -1,4 +1,4 @@
-
+let currentDraggedElement;
 let allTasks = [];
 
 
@@ -12,28 +12,42 @@ function createTasks(filteredArray, category) {
     for (let i = 0; i < filteredArray.length; i++) {
         let element = filteredArray[i];
         let color = chooseColor(i);
-        console.log(generateElement(element, color))
-        document.getElementById(category).innerHTML += generateElement(element, color);
+        for (let j = 0; j < element['assignedTo'].length; j++) {                
+            document.getElementById(category).innerHTML += generateElement(element, color, j, i);
+        }
         
     }
 }
 
+function startDragging(i){
+    currentDraggedElement = i;
+}
 
- function generateElement(array, color) {
+ function generateElement(array, color, j, i) {
     return `
-    <div class = "boardItem ${color}">
-        <div class = "boardItemDate">
-            ${array['date']}
+    <div draggable="true" ondragstart="startDragging(${i})" class="boardItem ${color}">
+        <div class="row">
+            <div>
+                <div class = "boardItemDate">
+                    ${array['date']}
+                </div>
+                <div class = "boardItemTitle">
+                    ${array['title']}
+                </div>
+                <div class = "boardItemUser">
+                    ${array['assignedTo'][j]['name']}
+                </div> 
+            </div>
+            <div><img class="bin" src="img/bin.png" onclick="deleteTask(allTasks, ${i})"></img></div>
         </div>
-        <div class = "boardItemTitle">
-            ${array['title']}
-        </div>
-        <div class = "boardItemUser">
-            ${array['assignedTo']['name']}
-        </div>   
     </div>
     `;
     
+}
+
+async function deleteTask(array, i){
+    await array.splice(i, 1);
+    filterTasks();
 }
 
 async function loadFromBackend() {
@@ -59,8 +73,21 @@ function filterTasks(){
     let inProgress = allTasks.filter(t => t['status'] == 'inProgress');
     let testing = allTasks.filter(t => t['status'] == 'testing');
     let done = allTasks.filter(t => t['status'] == 'done');
+    document.getElementById('toDo').innerHTML = ``;
+    document.getElementById('inProgress').innerHTML = ``;
+    document.getElementById('testing').innerHTML = ``;
+    document.getElementById('done').innerHTML = ``;
     createTasks(toDo,'toDo');
     createTasks(inProgress,'inProgress');
     createTasks(testing,'testing');
     createTasks(done,'done');
+}
+
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+function moveTo(category){
+    allTasks[currentDraggedElement]['status'] = category;
+    filterTasks();
 }

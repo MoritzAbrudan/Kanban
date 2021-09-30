@@ -27,28 +27,28 @@
             <div class = "taskName">
                 <p>TO DO</p>
             </div>
-            <div class ="task" id="toDo">
+            <div ondrop="moveTo('toDo')" ondragover="allowDrop(event)" class ="task" id="toDo">
             </div>
         </div>
         <div class = "singleTaskContainer">
             <div class = "taskName">
                 <p>IN PROGRESS</p>
             </div>
-            <div class ="task" id ="inProgress">                
+            <div ondrop="moveTo('inProgress')" ondragover="allowDrop(event)" class ="task" id ="inProgress">                
             </div>
         </div>
         <div class = "singleTaskContainer">
             <div class = "taskName">
                 <p>TESTING</p>
             </div>
-            <div class ="task" id="testing">                
+            <div ondrop="moveTo('testing')" ondragover="allowDrop(event)" class ="task" id="testing">                
             </div>
         </div>
         <div class = "singleTaskContainer">
             <div class = "taskName">
                 <p>DONE</p>
             </div>
-            <div class ="task" id ="done">                
+            <div ondrop="moveTo('done')" ondragover="allowDrop(event)" class ="task" id ="done">                
             </div>
         </div>
     </div>

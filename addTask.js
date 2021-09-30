@@ -80,8 +80,16 @@ function createTask(event) {
     }, );
     event.preventDefault();
     backend.setItem('allTasks', JSON.stringify(allTasks));
-    document.getElementById('addTask').reset();
+    deleteImputFields();
     selectetPositions = [];
+}
+
+function deleteImputFields() {
+    document.getElementById('title').value = '';
+    document.getElementById('input-cat').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('input-urge').value = '';
 }
 
 function showPosition() {

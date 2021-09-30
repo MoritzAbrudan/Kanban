@@ -27,8 +27,12 @@ function includeHTML() {
             return;
         }
     }
-    // Navi Animation
+    naviAnimation();
+}
 
+// Navi Animation
+
+function naviAnimation() {
     let url = window.location.href;
 
     if (url.endsWith('board.html')) {

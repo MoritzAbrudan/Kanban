@@ -51,6 +51,9 @@ body {
 button {
     background-color: #1f1fa0;
     color: white;
+    cursor: pointer;
+    width: 150px;
+    height: 26px;
 }
 
 .login {

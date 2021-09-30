@@ -81,6 +81,7 @@ function createTask(event) {
     event.preventDefault();
     backend.setItem('allTasks', JSON.stringify(allTasks));
     document.getElementById('addTask').reset();
+    selectetPositions = [];
 }
 
 function showPosition() {

@@ -27,7 +27,7 @@ function includeHTML() {
             return;
         }
     }
-    naviAnimation();
+    setTimeout(naviAnimation, 100);
 }
 
 // Navi Animation
@@ -35,11 +35,28 @@ function includeHTML() {
 function naviAnimation() {
     let url = window.location.href;
 
+
     if (url.endsWith('board.html')) {
         document.getElementById('board').classList.add('nav-animation');
     }
 
     if (url.endsWith('backlog.html')) {
         document.getElementById('backlog').classList.add('nav-animation');
+    }
+
+    if (url.endsWith('addTask.html')) {
+        document.getElementById('addTask').classList.add('nav-animation');
+    }
+
+    if (url.endsWith('help.html')) {
+        document.getElementById('help').classList.add('nav-animation');
+    }
+
+    if (url.endsWith('login.html')) {
+        document.getElementById('login').classList.add('nav-animation');
+    }
+
+    if (url.endsWith('impressum.html')) {
+        document.getElementById('impressum').classList.add('nav-animation');
     }
 }

@@ -29,7 +29,6 @@ body {
 
 .nav-menue-section {
     display: flex;
-    padding-left: 0px;
 }
 
 .nav-menue {
@@ -52,11 +51,12 @@ body {
 
 .nav-menue a:hover {
     border-left: white solid 6px;
+    background-color: rgba(255, 255, 255, 0.253);
+    width: 100%;
 }
 
 .nav-animation {
-    color: brown;
-    text-decoration: underline;
+    border-left: white solid 6px;
 }
 
 .footer-section {

@@ -1,39 +1,39 @@
-let url = 'http://gruppe-105.developerakademie.net/smallest_backend_ever';
+
 let allTasks = [];
 
 
 async function updateBoard(){
     await loadFromBackend();
-    createTasks();
+    filterTasks();
 }
 
 
-function createTasks() {
-    for (let i = 0; i < allTasks.length; i++) {
-        let element = allTasks[i];
-        let category = allTasks[i]['status'];
+function createTasks(filteredArray, category) {
+    for (let i = 0; i < filteredArray.length; i++) {
+        let element = filteredArray[i];
         let color = chooseColor(i);
-        for (let j = 0; j < allTasks[i]['assignedTo'].length; j++) {                
-            document.getElementById(category).innerHTML += generateElement(allTasks, i, color, j);
-        }
+        console.log(generateElement(element, color))
+        document.getElementById(category).innerHTML += generateElement(element, color);
+        
     }
 }
 
 
- function generateElement(allTasks, i, color, j) {
+ function generateElement(array, color) {
     return `
     <div class = "boardItem ${color}">
         <div class = "boardItemDate">
-            ${allTasks[i]['date']}
+            ${array['date']}
         </div>
         <div class = "boardItemTitle">
-            ${allTasks[i]['title']}
+            ${array['title']}
         </div>
         <div class = "boardItemUser">
-            ${allTasks[i]['assignedTo'][j]['name']}
+            ${array['assignedTo']['name']}
         </div>   
     </div>
-    `
+    `;
+    
 }
 
 async function loadFromBackend() {
@@ -53,3 +53,14 @@ function chooseColor(i){
     };  
     return color;   
 };
+
+function filterTasks(){
+    let toDo = allTasks.filter(t => t['status'] == 'toDo');
+    let inProgress = allTasks.filter(t => t['status'] == 'inProgress');
+    let testing = allTasks.filter(t => t['status'] == 'testing');
+    let done = allTasks.filter(t => t['status'] == 'done');
+    createTasks(toDo,'toDo');
+    createTasks(inProgress,'inProgress');
+    createTasks(testing,'testing');
+    createTasks(done,'done');
+}

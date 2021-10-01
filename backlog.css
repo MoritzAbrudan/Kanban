@@ -28,8 +28,7 @@
 
 /* Table */
 .table{
-    width: 100%;   
-    border-collapse: separate;    
+    width: 100%;       
     border-spacing:0 10px;  
               
 }
@@ -76,12 +75,12 @@
 }
 #table-profile img{
     display: inline;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 1px solid gray;
     padding: 3px;
     margin-right: 10px;
+    object-fit: cover;
 }
 .profile-email{
     color: rgb(73, 139, 245);

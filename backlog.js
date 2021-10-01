@@ -29,6 +29,7 @@ function profileAsHTML(color, allTasks, i, j){
                             </div>
                         </div>                                                      
                     </td>
+                        <td id="table-title">${allTasks[i]['title']}</td>
                         <td id="table-category">${allTasks[i]['category']}</td>
                         <td id="table-details">${allTasks[i]['description']}</td>
                 </tr>

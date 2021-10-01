@@ -9,7 +9,7 @@ function generateProfile(){
     let container = document.getElementById('table');
     for (let i = 0; i < allTasks.length; i++) {
         const element = allTasks[i];
-        let color = chooseColor(i);
+        let color = chooseColor(element);
         for (let j = 0; j < allTasks[i]['assignedTo'].length; j++) {                
             container.innerHTML += profileAsHTML(color, allTasks, i, j);
         }   
@@ -36,12 +36,12 @@ function profileAsHTML(color, allTasks, i, j){
     `
 }
 
-function chooseColor(i){    
-    if (allTasks[i]['urgency'] == 'Hat Zeit') {
+function chooseColor(array){    
+    if (array['urgency'] == 'Hat Zeit') {
         color = 'green';           
-    } else if(allTasks[i]['urgency'] == 'Hoch'){
+    } else if(array['urgency'] == 'Hoch'){
         color = 'orange';
-    } else if(allTasks[i]['urgency'] == 'Sehr Hoch'){
+    } else if(array['urgency'] == 'Sehr Hoch'){
         color = 'red';
     } else{
         color = 'blue';

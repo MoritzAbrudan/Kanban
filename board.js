@@ -11,21 +11,23 @@ async function updateBoard(){
 function createTasks(filteredArray, category) {
     for (let i = 0; i < filteredArray.length; i++) {
         let element = filteredArray[i];
-        let color = chooseColor(i);
-        for (let j = 0; j < element['assignedTo'].length; j++) {                
-            document.getElementById(category).innerHTML += generateElement(element, color, j, i);
-        }
-        
+        let color = chooseColor(element);                
+        document.getElementById(category).innerHTML += generateElement(element, color, i);
     }
 }
 
-function startDragging(i){
-    currentDraggedElement = i;
+function startDragging(description) {
+
+    allTasks.forEach(task => {
+        if (task['description'] == description) {
+            currentDraggedElement = allTasks.indexOf(task)
+        }
+    });
 }
 
- function generateElement(array, color, j, i) {
+ function generateElement(array, color, i) {
     return `
-    <div draggable="true" ondragstart="startDragging(${i})" class="boardItem ${color}">
+    <div draggable="true" ondragstart="startDragging('${array['description']}')" class="boardItem ${color}">
         <div class="row">
             <div>
                 <div class = "boardItemDate">
@@ -35,18 +37,25 @@ function startDragging(i){
                     ${array['title']}
                 </div>
                 <div class = "boardItemUser">
-                    ${array['assignedTo'][j]['name']}
+                    ${array['assignedTo'][0]['name']}
                 </div> 
             </div>
-            <div><img class="bin" src="img/bin.png" onclick="deleteTask(allTasks, ${i})"></img></div>
+            <div><img class="bin" src="img/bin.png" onclick="deleteTask('${array['description']}')"></img></div>
         </div>
     </div>
     `;
     
 }
 
-async function deleteTask(array, i){
-    await array.splice(i, 1);
+async function deleteTask(description){
+     
+    let index;
+    allTasks.forEach(task => {
+        if (task['description'] == description) {
+            index = allTasks.indexOf(task);
+            allTasks.splice(index, 1);
+        }
+    });
     filterTasks();
 }
 
@@ -55,12 +64,12 @@ async function loadFromBackend() {
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
 }
 
-function chooseColor(i){    
-    if (allTasks[i]['urgency'] == 'Hat Zeit') {
+function chooseColor(array){    
+    if (array['urgency'] == 'Hat Zeit') {
         color = 'green';           
-    } else if(allTasks[i]['urgency'] == 'Hoch'){
+    } else if(array['urgency'] == 'Hoch'){
         color = 'orange';
-    } else if(allTasks[i]['urgency'] == 'Sehr Hoch'){
+    } else if(array['urgency'] == 'Sehr Hoch'){
         color = 'red';
     } else{
         color = 'blue';
@@ -87,7 +96,7 @@ function allowDrop(ev) {
     ev.preventDefault();
   }
 
-function moveTo(category){
-    allTasks[currentDraggedElement]['status'] = category;
+function moveTo(status){
+    allTasks[currentDraggedElement]['status'] = status;
     filterTasks();
 }

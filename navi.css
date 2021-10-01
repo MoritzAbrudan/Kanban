@@ -56,7 +56,7 @@ body {
 }
 
 .nav-animation {
-    border-left: white solid 6px;
+    border-left: white solid 6px !important;
 }
 
 .footer-section {

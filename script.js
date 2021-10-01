@@ -27,7 +27,7 @@ function includeHTML() {
             return;
         }
     }
-    setTimeout(naviAnimation, 100);
+    setTimeout(naviAnimation, 50);
 }
 
 // Navi Animation
@@ -52,8 +52,8 @@ function naviAnimation() {
         document.getElementById('help').classList.add('nav-animation');
     }
 
-    if (url.endsWith('login.html')) {
-        document.getElementById('login').classList.add('nav-animation');
+    if (url.endsWith('start.html')) {
+        document.getElementById('start').classList.add('nav-animation');
     }
 
     if (url.endsWith('impressum.html')) {

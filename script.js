@@ -1,4 +1,5 @@
 setURL('http://gruppe-105.developerakademie.net/smallest_backend_ever');
+let allTasks = [];
 
 // Einbinden Navi
 function includeHTML() {
@@ -59,4 +60,24 @@ function naviAnimation() {
     if (url.endsWith('impressum.html')) {
         document.getElementById('impressum').classList.add('nav-animation');
     }
+}
+
+// Teilt den Tasks Farben nach Eiligkeit zu
+function chooseColor(array){    
+    if (array['urgency'] == 'Hat Zeit') {
+        color = 'green';           
+    } else if(array['urgency'] == 'Hoch'){
+        color = 'orange';
+    } else if(array['urgency'] == 'Sehr Hoch'){
+        color = 'red';
+    } else{
+        color = 'blue';
+    };  
+    return color;   
+};
+
+// Lädt Array vom Server runter und gibt ihn in der Konsole aus
+async function loadFromBackend() {
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
 }

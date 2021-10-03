@@ -1,5 +1,4 @@
 let currentDraggedElement;
-let allTasks = [];
 
 
 async function updateBoard(){
@@ -58,24 +57,6 @@ async function deleteTask(description){
     });
     filterTasks();
 }
-
-async function loadFromBackend() {
-    await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-}
-
-function chooseColor(array){    
-    if (array['urgency'] == 'Hat Zeit') {
-        color = 'green';           
-    } else if(array['urgency'] == 'Hoch'){
-        color = 'orange';
-    } else if(array['urgency'] == 'Sehr Hoch'){
-        color = 'red';
-    } else{
-        color = 'blue';
-    };  
-    return color;   
-};
 
 function filterTasks(){
     let toDo = allTasks.filter(t => t['status'] == 'toDo');

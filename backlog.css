@@ -74,7 +74,6 @@
     align-items: center;
 }
 #table-profile img{
-    display: inline;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -85,11 +84,38 @@
 .profile-email{
     color: rgb(73, 139, 245);
     text-decoration: none;
-    word-wrap: break-word;
 }
 
 
 #table-details{
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+
+@media(max-width: 1000px){
+    .backlog-head{
+        font-size: 20px;          
+    }    
+    .backlog-head p{        
+        font-size: 15px;        
+    }
+
+    .table-head{        
+        font-size: 17px;           
+    }
+
+    .table-todo-row{        
+        font-size: 15px;                    
+    }
+    #table-profile{
+        min-width: 120px;  
+    }    
+}
+
+@media (max-width: 700px){
+    .table-profile-container{
+        flex-direction: column;
+        text-align: center;        
+    }
 }

@@ -1,5 +1,3 @@
-let url = 'http://gruppe-105.developerakademie.net/smallest_backend_ever';
-
 async function loadBacklog(){
     await loadFromBackend();
     generateProfile();
@@ -34,22 +32,4 @@ function profileAsHTML(color, allTasks, i, j){
                         <td id="table-details">${allTasks[i]['description']}</td>
                 </tr>
     `
-}
-
-function chooseColor(array){    
-    if (array['urgency'] == 'Hat Zeit') {
-        color = 'green';           
-    } else if(array['urgency'] == 'Hoch'){
-        color = 'orange';
-    } else if(array['urgency'] == 'Sehr Hoch'){
-        color = 'red';
-    } else{
-        color = 'blue';
-    };  
-    return color;   
-};
-
-async function loadFromBackend() {
-    await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
 }

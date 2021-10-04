@@ -71,7 +71,7 @@ function createTask(event) {
         urgency: document.getElementById('input-urge').value,
         status: `toDo`,
         assignedTo: selectetPositions,
-    });
+    }, );
     event.preventDefault();
     backend.setItem('allTasks', JSON.stringify(allTasks));
     deleteImputFields();

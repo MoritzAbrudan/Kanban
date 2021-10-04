@@ -63,21 +63,27 @@ function naviAnimation() {
 }
 
 // Teilt den Tasks Farben nach Eiligkeit zu
-function chooseColor(array){    
+function chooseColor(array) {
     if (array['urgency'] == 'Hat Zeit') {
-        color = 'green';           
-    } else if(array['urgency'] == 'Hoch'){
+        color = 'green';
+    } else if (array['urgency'] == 'Hoch') {
         color = 'orange';
-    } else if(array['urgency'] == 'Sehr Hoch'){
+    } else if (array['urgency'] == 'Sehr Hoch') {
         color = 'red';
-    } else{
+    } else {
         color = 'blue';
-    };  
-    return color;   
+    };
+    return color;
 };
 
 // Lädt Array vom Server runter und gibt ihn in der Konsole aus
 async function loadFromBackend() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+}
+
+// Login Warnung
+
+function nologin() {
+    window.alert('Achtung! Login zurzeit ausser Betrieb. Bitte logge dich als Gast ein.');
 }

@@ -1,4 +1,3 @@
-let allTasks = [];
 let selectetPositions = [];
 
 let category = ['Management', 'Marketing', 'Vertrieb', 'Buchhaltung'];
@@ -27,13 +26,7 @@ let assignedTo = [{
 async function init() {
     defineCategory();
     defineUrgency();
-    await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem("allTasks")) || [];
-}
-
-function today() {
-    let today = new Date();
-    document.getElementById('date').setAttribute('min', today);
+    await loadFromBackend();
 }
 
 /**
@@ -70,6 +63,7 @@ function defineUrgency() {
  */
 function createTask(event) {
     allTasks.push({
+        id: newDate().getTime(),
         title: document.getElementById('title').value,
         category: document.getElementById('input-cat').value,
         description: document.getElementById('description').value,
@@ -77,7 +71,7 @@ function createTask(event) {
         urgency: document.getElementById('input-urge').value,
         status: `toDo`,
         assignedTo: selectetPositions,
-    }, );
+    });
     event.preventDefault();
     backend.setItem('allTasks', JSON.stringify(allTasks));
     deleteImputFields();
@@ -97,19 +91,25 @@ function showPosition() {
     document.getElementById('window').innerHTML = '';
 
     for (let i = 0; i < assignedTo.length; i++) {
-        document.getElementById('window').innerHTML += `
-        <div class="containerUser" id="${i}" onclick="addPosition(${i})">
-            <div class="userImage">
-                <img src="${assignedTo[i]['img']||'./img/face-women1.jpg'}">
-            </div>
-            <div class="userInfo">
-                <span>${assignedTo[i]['name']}</span>
-                <span>${assignedTo[i]['email']}</span>
-            </div>
-        </div>
-        `;
+        document.getElementById('window').innerHTML += generateHTMLPosition(i);
     }
 }
+
+function generateHTMLPosition(i) {
+    return `
+        <div class = "containerUser" id = "${i}" onclick = "addPosition(${i})">
+            <div class = "userImage">
+                <img src = "${assignedTo[i]['img']||'./img/face-women1.jpg'}">
+            </div>
+            <div class = "userInfo">
+                <span> ${assignedTo[i]['name']} </span>
+                <span> ${assignedTo[i]['email']} </span>
+            </div>
+        </div>
+    `;
+
+}
+
 
 function hidePosition() {
     document.getElementById('containerWindow').classList.add('d-none');

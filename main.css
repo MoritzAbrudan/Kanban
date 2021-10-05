@@ -1,71 +1,76 @@
-body {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'PT Sans', sans-serif;
-}
-
-.content-section {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-}
-
-.page-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    margin-left: 20px;
-}
-
-.page-title {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
-.outerContainer {
-    background-color: rgba(93, 123, 255, 0.1);
-    border-radius: 20px;
-    width: 900px;
-    height: 400px;
-    margin-top: 30px;
-}
-
-.content {
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.content-login {
-    display: flex;
-    flex-direction: column;
-}
-
-.headline {
-    margin-bottom: 12px;
-    margin-left: 20px;
-}
-
-.content-text {
-    margin-top: 20px;
-}
-
-
-/* Login Seite */
-
-button {
-    background-color: #1f1fa0;
-    color: white;
-    cursor: pointer;
-    width: 150px;
-    height: 26px;
-}
-
-.login {
-    margin-bottom: 20px;
-}
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'PT Sans', sans-serif;
+        }
+        
+        .content-section {
+            display: flex;
+            flex-direction: row;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            width: 100vw;
+            margin-left: 20px;
+        }
+        
+        .page-title {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        
+        .outerContainer {
+            background-color: rgba(93, 123, 255, 0.1);
+            border-radius: 20px;
+            width: 900px;
+            height: 400px;
+            margin-top: 30px;
+        }
+        
+        .content {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .content-login {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .headline {
+            margin-bottom: 12px;
+            margin-left: 20px;
+        }
+        
+        .content-text {
+            margin-top: 20px;
+        }
+        /* Login Seite */
+        
+        button {
+            background-color: #1f1fa0;
+            color: white;
+            cursor: pointer;
+            width: 150px;
+            height: 26px;
+        }
+        
+        .login {
+            margin-bottom: 20px;
+        }
+        /* Optimazition for mobile device display */
+        
+        @media(max-width: 900px) {
+            .body {
+                width: 100vw;
+            }
+        }

@@ -83,7 +83,6 @@ async function loadFromBackend() {
 }
 
 // Login Warnung
-
 function nologin() {
     window.alert('Achtung! Login zurzeit ausser Betrieb. Bitte logge dich als Gast ein.');
 }

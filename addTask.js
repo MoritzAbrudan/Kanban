@@ -61,9 +61,9 @@ function defineUrgency() {
  * 
  * saves new task in array onsubmit
  */
-function createTask(event) {
+function createTask() {
     allTasks.push({
-        id: newDate().getTime(),
+        id: new Date().getTime(),
         title: document.getElementById('title').value,
         category: document.getElementById('input-cat').value,
         description: document.getElementById('description').value,
@@ -72,7 +72,6 @@ function createTask(event) {
         status: `toDo`,
         assignedTo: selectetPositions,
     }, );
-    event.preventDefault();
     backend.setItem('allTasks', JSON.stringify(allTasks));
     deleteImputFields();
     selectetPositions = [];
@@ -109,7 +108,6 @@ function generateHTMLPosition(i) {
     `;
 
 }
-
 
 function hidePosition() {
     document.getElementById('containerWindow').classList.add('d-none');

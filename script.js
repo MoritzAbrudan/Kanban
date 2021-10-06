@@ -86,3 +86,9 @@ async function loadFromBackend() {
 function nologin() {
     window.alert('Achtung! Login zurzeit ausser Betrieb. Bitte logge dich als Gast ein.');
 }
+
+// Speichert aktuelles Array in's Backend
+async function saveArrayInBackend() {
+    await backend.setItem('allTasks', JSON.stringify(allTasks));
+    console.log('saved to backend');
+}

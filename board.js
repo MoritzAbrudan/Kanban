@@ -11,22 +11,22 @@ function createTasks(filteredArray, category) {
     for (let i = 0; i < filteredArray.length; i++) {
         let element = filteredArray[i];
         let color = chooseColor(element);                
-        document.getElementById(category).innerHTML += generateElement(element, color, i);
+        document.getElementById(category).innerHTML += generateElement(element, color);
     }
 }
 
-function startDragging(description) {
+function startDragging(id) {
 
     allTasks.forEach(task => {
-        if (task['description'] == description) {
+        if (task['id'] == id) {
             currentDraggedElement = allTasks.indexOf(task)
         }
     });
 }
 
- function generateElement(array, color, i) {
+ function generateElement(array, color) {
     return `
-    <div draggable="true" ondragstart="startDragging('${array['description']}')" class="boardItem ${color}">
+    <div draggable="true" ondragstart="startDragging(${array['id']})" class="boardItem ${color}">
         <div class="row">
             <div>
                 <div class = "boardItemDate">
@@ -39,23 +39,23 @@ function startDragging(description) {
                     ${array['assignedTo'][0]['name']}
                 </div> 
             </div>
-            <div><img class="bin" src="img/bin.png" onclick="deleteTask('${array['description']}')"></img></div>
+            <div><img class="bin" src="img/bin.png" onclick="deleteTask(${array['id']})"></img></div>
         </div>
     </div>
     `;
     
 }
 
-async function deleteTask(description){
-     
+async function deleteTask(id){
     let index;
     allTasks.forEach(task => {
-        if (task['description'] == description) {
+        if (task['id'] == id) {
             index = allTasks.indexOf(task);
             allTasks.splice(index, 1);
         }
     });
     filterTasks();
+    saveArrayInBackend();
 }
 
 function filterTasks(){
@@ -80,4 +80,5 @@ function allowDrop(ev) {
 function moveTo(status){
     allTasks[currentDraggedElement]['status'] = status;
     filterTasks();
+    saveArrayInBackend();
 }

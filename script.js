@@ -86,3 +86,14 @@ async function loadFromBackend() {
 function nologin() {
     window.alert('Achtung! Login zurzeit ausser Betrieb. Bitte logge dich als Gast ein.');
 }
+
+// Mobiles Menü
+
+function openMenu() {
+    let menuclass = document.getElementById('menu')
+    if (menuclass.classList.contains('d-none')) {
+        document.getElementById('menu').classList.remove('d-none');
+    } else {
+        document.getElementById('menu').classList.add('d-none');
+    }
+}

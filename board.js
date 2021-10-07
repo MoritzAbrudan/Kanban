@@ -1,12 +1,18 @@
 let currentDraggedElement;
 
-
+/**
+ * lädt Array runter und erstellt Tasks fürs Board 
+ */
 async function updateBoard(){
     await loadFromBackend();
     filterTasks();
 }
 
-
+/**
+ * Schleife, um alle Tasks auf dem Board wiederzugeben
+ * @param {string} category
+ * @param {array} filteredArray
+ */
 function createTasks(filteredArray, category) {
     for (let i = 0; i < filteredArray.length; i++) {
         let element = filteredArray[i];
@@ -15,6 +21,9 @@ function createTasks(filteredArray, category) {
     }
 }
 
+/**
+ * @param {*} id individuelle Nummer einer Task
+ */
 function startDragging(id) {
 
     allTasks.forEach(task => {
@@ -24,6 +33,11 @@ function startDragging(id) {
     });
 }
 
+/**
+ * erstellt Board-Task als HTML
+ * @param {string} color
+ * @param {array} array
+ */
  function generateElement(array, color) {
     return `
     <div draggable="true" ondragstart="startDragging(${array['id']})" class="boardItem ${color}">
@@ -46,6 +60,10 @@ function startDragging(id) {
     
 }
 
+/**
+ * löscht eine Task nach id und aktualisiert Board
+ * @param {*} id individuelle Nummer einer Task
+ */
 async function deleteTask(id){
     let index;
     allTasks.forEach(task => {
@@ -58,6 +76,9 @@ async function deleteTask(id){
     saveArrayInBackend();
 }
 
+/**
+ * filtert die Tasks nach Status
+ */
 function filterTasks(){
     let toDo = allTasks.filter(t => t['status'] == 'toDo');
     let inProgress = allTasks.filter(t => t['status'] == 'inProgress');
@@ -73,10 +94,15 @@ function filterTasks(){
     createTasks(done,'done');
 }
 
+
 function allowDrop(ev) {
     ev.preventDefault();
-  }
+}
 
+/**
+ * ändert Status einer Task
+ * @param {string} status individuelle Nummer einer Task
+ */
 function moveTo(status){
     allTasks[currentDraggedElement]['status'] = status;
     filterTasks();

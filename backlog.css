@@ -26,7 +26,7 @@
 }
 
 
-/* Table */
+/*  Table    */
 .table{
     width: 100%;       
     border-spacing:0 10px;  
@@ -48,7 +48,7 @@
     padding: 10px;    
 }
 
-/* Profile td */
+/*  Profil td   */
 #table-profile{
     min-width: 300px;    
     border-bottom-left-radius: 10px;
@@ -92,7 +92,7 @@
     border-top-right-radius: 10px;
 }
 
-
+/*  responsive design   */
 @media(max-width: 1000px){
     .backlog-head{
         font-size: 20px;          

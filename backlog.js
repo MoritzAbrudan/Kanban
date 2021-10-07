@@ -1,8 +1,14 @@
+/**
+ * lädt Array runter und erstellt das Backlog 
+ */
 async function loadBacklog(){
     await loadFromBackend();
     generateProfile();
 }
 
+/**
+ * Schleife, um für jede Task und jeden Nutzer einen Eintrag zu erstellen
+ */
 function generateProfile(){
     let container = document.getElementById('table');
     for (let i = 0; i < allTasks.length; i++) {
@@ -14,6 +20,13 @@ function generateProfile(){
     }
 }
 
+/**
+ * Gibt das Backlog als HTML wieder
+ * @param {string} color 
+ * @param {array} allTasks 
+ * @param {number} i 
+ * @param {number} j 
+ */
 function profileAsHTML(color, allTasks, i, j){
     return`
     <tr class="table-todo-row">

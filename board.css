@@ -42,7 +42,7 @@
     cursor: pointer;
 }
 
-/**     Farben für die Kategorien   **/
+/*  Farben für die Kategorien   */
 .green {
     border-top: 5px solid green;
 }
@@ -80,6 +80,8 @@
     height: 25px;
     width: 25px;
 }
+
+/*  responsive design   */
 @media (max-width: 1000px) {
     .mainContainer {
         left: 150px;

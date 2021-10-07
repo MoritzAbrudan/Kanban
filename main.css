@@ -52,20 +52,51 @@
         
         .content-text {
             margin-top: 20px;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Impressum */
+        
+        .headline-impressum {
+            margin-bottom: 12px;
         }
         /* Login Seite */
         
         button {
+            border: none;
             background-color: #1f1fa0;
+            width: 100px;
+            height: 45px;
             color: white;
+            border-radius: 8px;
+            padding: 8px;
+            font-family: 'PT Sans', sans-serif;
             cursor: pointer;
-            width: 150px;
-            height: 26px;
         }
         
         .login {
             margin-bottom: 20px;
         }
+        
+        .login input {
+            font-size: 18px;
+            padding: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: rgba(0, 0, 0, 0.8);
+            font-family: PT Sans, sans-serif;
+        }
+        
+        .sign {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .content-text span {}
         /* Optimazition for mobile device display 900px */
         
         @media(max-width: 900px) {
@@ -74,12 +105,54 @@
             }
         }
         /* Optimazition for mobile device display 740px */
-
+        
         @media(max-width: 740px) {
             .page-title {
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
                 text-align: center;
+            }
+            /* Login- / Start-Seite */
+            .headline {
+                display: flex;
+                justify-content: center;
+                font-size: 18px;
+            }
+            .login {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .login input {
+                margin-top: 6px;
+                margin-bottom: 6px;
+            }
+            button {
+                border: none;
+                background-color: #1f1fa0;
+                width: 150px;
+                height: 45px;
+                color: white;
+                border-radius: 8px;
+                padding: 8px;
+                font-size: 18px;
+                font-family: 'PT Sans', sans-serif;
+                cursor: pointer;
+            }
+            .content-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 18px;
+            }
+            .guest-login {
+                display: flex;
+                justify-content: center;
+            }
+            .sign {
+                display: flex;
+                text-align: center;
+            }
         }
-    }

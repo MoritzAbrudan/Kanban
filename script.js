@@ -92,3 +92,14 @@ async function saveArrayInBackend() {
     await backend.setItem('allTasks', JSON.stringify(allTasks));
     console.log('saved to backend');
 }
+
+// Mobiles Menü
+
+function openMenu() {
+    let menuclass = document.getElementById('menu')
+    if (menuclass.classList.contains('d-none')) {
+        document.getElementById('menu').classList.remove('d-none');
+    } else {
+        document.getElementById('menu').classList.add('d-none');
+    }
+}

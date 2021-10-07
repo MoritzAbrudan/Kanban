@@ -11,6 +11,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .nav-bar {
@@ -85,6 +86,8 @@ body {
 .mobil-image {
     display: none;
 }
+
+
 /* Optimazition for mobile device display 900px */
 
 @media(max-width: 900px) {
@@ -130,35 +133,51 @@ body {
     .nav-menue-section {
         display: flex;
         align-items: center;
-        margin: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
         height: 100%;
+        width: 100%;
     }
     .nav-menue {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: row;
-        width: 500px;
-        font-size: 15px;
+        margin-right: 0px;
+        margin-left: 0px;
         margin-top: 0px;
         margin-bottom: 0px;
+        align-items: center;
     }
     .nav-menue a {
         display: flex;
-        justify-content: space-between;
+        justify-content: center !important;
         align-items: center;
+        width: 90px;
         padding-bottom: 0px;
         padding-top: 0px;
         padding-left: 5px;
         padding-right: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .nav-menue a:hover {
-        border-bottom: none;
+        border-left: none !important;
+        border-bottom: white solid 6px !important;
         background-color: rgba(255, 255, 255, 0.253);
-        width: 100%;
-        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     .nav-animation {
-        border-bottom: none !important;
+        border-left: none !important;
+        display: flex;
+        justify-content: center;
+        border-bottom: white solid 6px !important;
     }
     .footer-section {
         position: relative;
@@ -183,6 +202,8 @@ body {
         display: none;
     }
 }
+
+
 /* Optimazition for mobile device display 740px */
 
 @media(max-width: 740px) {
@@ -227,6 +248,7 @@ body {
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        margin-left: 0;
         height: 100%;
         width: 100%;
     }
@@ -248,10 +270,11 @@ body {
         align-items: center;
         padding-bottom: 0px;
         padding-top: 0px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .nav-menue a:hover {
+        border-left: white solid 6px !important;
         border-bottom: none;
         background-color: rgba(255, 255, 255, 0.253);
         width: 100%;
@@ -259,6 +282,7 @@ body {
     }
     .nav-animation {
         border-bottom: none !important;
+        border-left: white solid 6px !important;
     }
     .footer-section {
         position: absolut;

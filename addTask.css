@@ -169,6 +169,11 @@ form {
     .page {
         margin-top: 50px;
     }
+    .window {
+        right: unset;
+        left: 20px;
+        top: 630px;
+    }
 }
 
 @media(max-width:400px) {

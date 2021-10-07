@@ -95,6 +95,7 @@
 /*  responsive design   */
 @media(max-width: 1000px){
     .backlog-head{
+        margin-top: 15px;
         font-size: 20px;          
     }    
     .backlog-head p{        

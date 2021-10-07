@@ -95,8 +95,6 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        
-        .content-text span {}
         /* Optimazition for mobile device display 900px */
         
         @media(max-width: 900px) {

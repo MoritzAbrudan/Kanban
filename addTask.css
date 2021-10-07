@@ -5,7 +5,12 @@ body {
 form {
     display: flex;
     justify-content: space-between;
+    background-color: rgba(93, 123, 255, 0.1);
+    border-radius: 20px;
+    width: 700px;
     height: 400px;
+    margin-top: 30px;
+    padding: 20px;
 }
 
 .d-none {
@@ -14,15 +19,6 @@ form {
 
 .page {
     margin-left: 20px;
-}
-
-.outerContainer {
-    background-color: rgba(93, 123, 255, 0.1);
-    border-radius: 20px;
-    width: 900px;
-    height: 400px;
-    margin-top: 30px;
-    padding: 20px;
 }
 
 .column {
@@ -159,33 +155,24 @@ form {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media(max-width:1000px) {
-    .outerContainer {
-        width: unset;
-        height: unset;
-    }
-    form {
-        height: unset;
-        width: 700px;
-    }
-}
-
 @media(max-width:900px) {
+    .outerContainer {
+        width: 90vw;
+        height: unset;
+    }
     form {
-        width: 600px;
+        height: unset;
+        width: unset;
         display: block;
         justify-content: unset;
     }
-}
-
-@media(max-width:800px) {
-    form {
-        width: 400px
+    .page {
+        margin-top: 50px;
     }
 }
 
-@media(max-width: 630px) {
-    form {
-        width: unset;
+@media(max-width:400px) {
+    .outerContainer {
+        width: 80vw;
     }
 }

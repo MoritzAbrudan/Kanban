@@ -165,6 +165,7 @@ form {
         width: unset;
         display: block;
         justify-content: unset;
+        margin-bottom: 20px;
     }
     .page {
         margin-top: 50px;

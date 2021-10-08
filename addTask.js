@@ -1,5 +1,4 @@
 let selectetPositions = [];
-
 let category = ['Management', 'Marketing', 'Vertrieb', 'Buchhaltung'];
 let urgency = ['Sehr Hoch', 'Hoch', 'Normal', 'Hat Zeit'];
 let assignedTo = [{
@@ -59,7 +58,7 @@ function defineUrgency() {
 
 /**
  * 
- * saves new task in array onsubmit
+ * saves new task in JSON array onsubmit
  */
 function createTask() {
     allTasks.push({
@@ -77,6 +76,10 @@ function createTask() {
     selectetPositions = [];
 }
 
+/**
+ * 
+ * clears the form
+ */
 function deleteImputFields() {
     document.getElementById('title').value = '';
     document.getElementById('input-cat').value = '';
@@ -85,6 +88,10 @@ function deleteImputFields() {
     document.getElementById('input-urge').value = '';
 }
 
+/**
+ * 
+ * opens window to select position
+ */
 function showPosition() {
     document.getElementById('containerWindow').classList.remove('d-none');
     document.getElementById('window').innerHTML = '';
@@ -94,6 +101,11 @@ function showPosition() {
     }
 }
 
+/**
+ * Generates HTML Code for showPosition-function
+ * @param {numer} i 
+ * @returns {string} - HTML code for selection of positions
+ */
 function generateHTMLPosition(i) {
     return `
         <div class = "containerUser" id = "${i}" onclick = "addPosition(${i})">
@@ -109,10 +121,17 @@ function generateHTMLPosition(i) {
 
 }
 
+/**
+ * function to colse window for selecting position
+ */
 function hidePosition() {
     document.getElementById('containerWindow').classList.add('d-none');
 }
 
+/**
+ * adds positin to task
+ * @param {number} i 
+ */
 function addPosition(i) {
     if (selectetPositions.includes(assignedTo[i])) {
         alert('Bitte eine andere Person auswählen. Die ausgewählte Person wurde bereits hinzugefügt.');

@@ -93,7 +93,7 @@ function deleteImputFields() {
  * opens window to select position
  */
 function showPosition() {
-    document.getElementById('containerWindow').classList.remove('d-none');
+    document.getElementById('containerWindow').classList.remove('display-none');
     document.getElementById('window').innerHTML = '';
 
     for (let i = 0; i < assignedTo.length; i++) {
@@ -125,7 +125,7 @@ function generateHTMLPosition(i) {
  * function to colse window for selecting position
  */
 function hidePosition() {
-    document.getElementById('containerWindow').classList.add('d-none');
+    document.getElementById('containerWindow').classList.add('display-none');
 }
 
 /**

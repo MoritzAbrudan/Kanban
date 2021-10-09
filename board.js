@@ -50,7 +50,7 @@ function startDragging(id) {
                     ${array['title']}
                 </div>
                 <div class = "boardItemUser">
-                    ${array['assignedTo'][0]['name']}
+                    ${array['assignedTo']['name']}
                 </div> 
             </div>
             <div><img class="bin" src="img/bin.png" onclick="deleteTask(${array['id']})"></img></div>

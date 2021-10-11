@@ -74,6 +74,7 @@ function createTask() {
     backend.setItem('allTasks', JSON.stringify(allTasks));
     deleteImputFields();
     selectetPositions = [];
+    alert('DIe AUfgabe wurde erfolgreich gespeichert!');
 }
 
 /**

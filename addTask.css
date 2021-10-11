@@ -157,28 +157,34 @@ form {
 
 @media(max-width:900px) {
     .outerContainer {
-        width: 90vw;
         height: unset;
     }
     form {
         height: unset;
-        width: unset;
         display: block;
         justify-content: unset;
         margin-bottom: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: unset;
+    }
+    .column {
+        width: unset;
     }
     .page {
         margin-top: 50px;
+        margin-left: 0px;
+        width: 100%;
     }
     .window {
         right: unset;
         left: 20px;
         top: 630px;
     }
-}
-
-@media(max-width:400px) {
-    .outerContainer {
-        width: 80vw;
+    h2 {
+        padding-left: 20px;
+    }
+    span {
+        padding-left: 20px;
     }
 }
